@@ -9,6 +9,7 @@
 		.y((d, i) => d * Math.sin(angleSlice * i - Math.PI / 2));
 	$: cx = (circleR, i) => circleR * Math.cos(angleSlice * i - Math.PI / 2)
 	$: cy = (circleR, i) => circleR * Math.sin(angleSlice * i - Math.PI / 2)
+	export let color;
 </script>
 <g
 	transform="translate({ $width / 2 }, { $height / 2 })"
@@ -18,8 +19,8 @@
 		<path
 			class='path-line'
 			d='{path($xGet(row))}'
-			stroke="#f0c"
-			fill="#f0c"
+			stroke="{color}"
+			fill="{color}"
 			fill-opacity="0.5"
 		></path>
 
@@ -29,7 +30,7 @@
 				cx={cx(circleR, i)}
 				cy={cy(circleR, i)}
 				r="4.5"
-				fill="#f0c"
+				fill="{color}"
 				stroke="#fff"
 				stroke-width="1"
 			></circle>

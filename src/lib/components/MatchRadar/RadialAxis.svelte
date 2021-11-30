@@ -1,10 +1,14 @@
 <script>
 	import { getContext } from 'svelte';
-	const { width, height, xScale, extents, config } = getContext('LayerCake');
+	const { width, height, xScale, config } = getContext('LayerCake');
 	export let linePaddingFactor = 1.1;
 	export let labelPaddingFactor = 1.25;
-	$: max = $xScale(Math.max(...$extents.x));
+	$: max = $xScale(100);
 	$: angleSlice = (Math.PI * 2) / $config.x.length;
+	const xSeries = $config.x.map(text => {
+		var result = text.replace( /([A-Z])/g, " $1" );
+		return (result.charAt(0).toUpperCase() + result.slice(1));
+	});
 	function anchor (total, i) {
 		if (i === 0 || i === total / 2) {
 			return 'middle';
@@ -52,7 +56,7 @@
 			dy="0.35em"
 			font-size="12px"
 			text-outline="#fff"
-			transform="translate({(max * labelPaddingFactor) * Math.cos(angleSlice * i - Math.PI / 2)}, {(max * labelPaddingFactor) * Math.sin(angleSlice * i - Math.PI / 2)})">{small ? xKeySmall[i] : label}</text>
+			transform="translate({(max * labelPaddingFactor) * Math.cos(angleSlice * i - Math.PI / 2)}, {(max * labelPaddingFactor) * Math.sin(angleSlice * i - Math.PI / 2)})">{small ? xKeySmall[i] : xSeries[i]}</text>
 	{/each}
 </g>
 

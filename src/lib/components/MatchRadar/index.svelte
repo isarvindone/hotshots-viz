@@ -3,17 +3,14 @@
 	import { LayerCake, Svg } from 'layercake';
 	import Radar from './Radar.svelte';
 	import RadialAxis from './RadialAxis.svelte';
-	import data from './radarScores.js';
-	const seriesKey = 'name';
-	const xKey = ['fastball', 'change', 'slider', 'cutter', 'curve'];
-	const seriesNames = Object.keys(data[0]).filter(d => d !== seriesKey);
-	data.forEach(d => {
-		seriesNames.forEach(name => {
-			d[name] = +d[name];
-		});
-	});
+	import tennisData from '$lib/playerData.js';
+	export let player;
+	export let match;
+	const statObject = tennisData[player].matches[match].stats.overall;
+	const xKey = Object.keys(statObject).slice(1);
+	export let color = tennisData[player].color;
 	export let small = false;
-	export let xKeySmall = ['fbl', 'chg', 'sld', 'cut', 'crv'];
+	export let xKeySmall = xKey.map(key => (key.charAt(0) + key.split('').filter(x => x === x.toUpperCase()).join('')).toLowerCase());
 </script>
 <style>
 	/*
@@ -31,13 +28,13 @@
 	<LayerCake
 		padding={{ top: 0, right: 0, bottom: 0, left: 0 }}
 		x={xKey}
-		xDomain={[0, 10]}
+		xDomain={[0, 100]}
 		xRange={({ height }) => [0, height / 2]}
-		data={data}
+		data={[statObject]}
 	>
 		<Svg>
 			<RadialAxis {small} {xKeySmall}/>
-			<Radar/>
+			<Radar {color}/>
 		</Svg>
 	</LayerCake>
 </div>
