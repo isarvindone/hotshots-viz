@@ -1,5 +1,6 @@
 <script>
     export let color;
+    export let classes = "py-2 px-4";
     export let handleClick;
     export let inverted = false;
 </script>
@@ -7,7 +8,6 @@
 <button class="
     inline-flex 
     items-center 
-    py-2 px-4 
     {inverted ? `bg-${color}-500` : `bg-${color}-100`} 
     {inverted ? `text-white` : `text-${color}-700`} 
     font-semibold 
@@ -19,7 +19,11 @@
     focus:outline-none 
     focus:ring-4 
     focus:ring-{color}-400
+    border-2 
+    border-{color}-200
+    {classes}
     "
-    on:click={handleClick}>
+    on:click={handleClick}
+    >
     <slot/>
 </button>  

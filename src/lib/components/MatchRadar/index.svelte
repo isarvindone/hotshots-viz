@@ -1,14 +1,12 @@
 <script>
-	// 	Note: Due to REPL limitations, full responsiveness may not work here. Download the example from here or from the website (https://layercake.graphics/example/Radar) and run locally to get all features.
 	import { LayerCake, Svg } from 'layercake';
 	import Radar from './Radar.svelte';
 	import RadialAxis from './RadialAxis.svelte';
-	import tennisData from '$lib/playerData.js';
+	import db from '$lib/db.js';
 	export let player;
 	export let match;
-	const statObject = tennisData[player].matches[match].stats.overall;
-	const xKey = Object.keys(statObject).slice(1);
-	export let color = tennisData[player].color;
+	const xKey = Object.keys(db.playerData[player].matches[match].stats.overall).slice(1);
+	export let color = db.playerData[player].color;
 	export let small = false;
 	export let xKeySmall = xKey.map(key => (key.charAt(0) + key.split('').filter(x => x === x.toUpperCase()).join('')).toLowerCase());
 </script>
@@ -26,12 +24,12 @@
 </style>
 <div class="chart-container">
 	<LayerCake
-		padding={{ top: 0, right: 0, bottom: 0, left: 0 }}
+		padding={{ top: 10, right: 5, bottom: 10, left: 15 }}
 		x={xKey}
 		xDomain={[0, 100]}
 		xRange={({ height }) => [0, height / 2]}
-		data={[statObject]}
-	>
+		data={[db.playerData[player].matches[match].stats.overall]}
+		>
 		<Svg>
 			<RadialAxis {small} {xKeySmall}/>
 			<Radar {color}/>

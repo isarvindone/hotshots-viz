@@ -2,7 +2,7 @@
 	import { getContext } from 'svelte';
 	const { width, height, xScale, config } = getContext('LayerCake');
 	export let linePaddingFactor = 1.1;
-	export let labelPaddingFactor = 1.25;
+	export let labelPaddingFactor = 1.3;
 	$: max = $xScale(100);
 	$: angleSlice = (Math.PI * 2) / $config.x.length;
 	const xSeries = $config.x.map(text => {
