@@ -7,6 +7,7 @@
     open(HelpPopup, { message: "It's a Help popup!" });
   };
 </script>
+
 <Button color="gray" handleClick={showHelpPopup}>
   <svg
     class="w-6 h-6 mr-2 fill-current"

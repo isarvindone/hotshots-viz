@@ -32,7 +32,8 @@ export const summarizeColor = (color, object) => {
     resultObj.netFrequency += parseInt(stats[i].netFrequency);
     resultObj.returnInPlay += parseInt(stats[i].returnInPlay);
   }
-  resultObj.result = resultObj.result.filter(x => x === "win").length * 100 / arrLength;
+  resultObj.result =
+    (resultObj.result.filter((x) => x === "win").length * 100) / arrLength;
   resultObj.firstServPerc /= arrLength;
   resultObj.fhWinPerc /= arrLength;
   resultObj.bhWinPerc /= arrLength;
@@ -41,5 +42,5 @@ export const summarizeColor = (color, object) => {
   return resultObj;
 };
 export const roundToTwo = (num) => {
-  return +(Math.round(num + "e+2")  + "e-2");
-}
+  return +(Math.round(num + "e+2") + "e-2");
+};

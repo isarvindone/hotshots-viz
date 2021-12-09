@@ -8,17 +8,15 @@
   $: localList = [...list];
   let data = db.playerData;
   $: stats = groupBy(
-		localList.map((match) => {
-        let obj = match.stats.overall;
-        let playerColor = findById(match.pid)[0].color;
-        obj["color"] = playerColor;
-        return obj;
-      }),
-      "color"
-    )
-  $: summary = Object.keys(stats).map(color => summarizeColor(color, stats));
-  $: console.log("stats", stats);
-  $: console.log("summary", summary);
+    localList.map((match) => {
+      let obj = match.stats.overall;
+      let playerColor = findById(match.pid)[0].color;
+      obj["color"] = playerColor;
+      return obj;
+    }),
+    "color"
+  );
+  $: summary = Object.keys(stats).map((color) => summarizeColor(color, stats));
   const xKey = Object.keys(data[0].matches[0].stats.overall).slice(1);
 </script>
 

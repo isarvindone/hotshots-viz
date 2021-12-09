@@ -4,7 +4,7 @@
   import AboutPopup from "./AboutPopup.svelte";
   const { open } = getContext("simple-modal");
   const showAboutPopup = () => {
-    open(AboutPopup, { message: "It's a popup!" });
+    open(AboutPopup, {});
   };
 </script>
 

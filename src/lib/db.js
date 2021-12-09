@@ -3,10 +3,10 @@ export default {
     {
       index: 0,
       id: "5997fce9",
-	  color: "#0ea7b5",
+      color: "#0ea7b5",
       firstName: "Roger",
       lastName: "Federer",
-	  singlesRank: 16,
+      singlesRank: 16,
       image:
         "https://www.atptour.com/-/media/tennis/players/head-shot/2020/federer_head_ao20.png",
       matches: [
@@ -267,8 +267,8 @@ export default {
       id: "2fc329cd",
       firstName: "Novak",
       lastName: "Djokovic",
-	  singlesRank: 1,
-	  color: "#565ec1",
+      singlesRank: 1,
+      color: "#565ec1",
       image:
         "https://www.atptour.com/-/media/tennis/players/head-shot/2019/djokovic_head_ao19.png",
       matches: [
@@ -529,8 +529,8 @@ export default {
       id: "30b924b0",
       firstName: "Daniil",
       lastName: "Medvedev",
-	  singlesRank: 2,
-	  color: "#e8702a",
+      singlesRank: 2,
+      color: "#e8702a",
       image:
         "https://www.atptour.com/-/media/tennis/players/head-shot/2020/medvedev_head_ao20.png",
       matches: [
@@ -551,11 +551,11 @@ export default {
           stats: {
             overall: {
               result: "win",
-              firstServPerc: 83.1, 
-              fhWinPerc: 17.3, 
-              bhWinPerc: 5.6, 
+              firstServPerc: 83.1,
+              fhWinPerc: 17.3,
+              bhWinPerc: 5.6,
               netFrequency: 7.9,
-              returnInPlay: 58, 
+              returnInPlay: 58,
             },
           },
         },
