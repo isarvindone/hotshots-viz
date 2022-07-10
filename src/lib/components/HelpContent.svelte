@@ -1,5 +1,5 @@
 <script>
-  import Button from "./button.svelte";
+  import Button from "./Button.svelte";
   import { getContext } from "svelte";
   import HelpPopup from "./HelpPopup.svelte";
   const { open } = getContext("simple-modal");

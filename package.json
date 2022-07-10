@@ -5,9 +5,8 @@
     "dev": "svelte-kit dev",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",
-    "build": "rm -rf build && svelte-kit build",
-    "deploy": "npm run build && gh-pages -d build -t true"
-    },
+    "build": "rm -rf public && svelte-kit build"
+  },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/adapter-static": "^1.0.0-next.21",

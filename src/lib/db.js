@@ -8,7 +8,7 @@ export default {
       lastName: "Federer",
       singlesRank: 16,
       image:
-        "https://www.atptour.com/-/media/tennis/players/head-shot/2020/federer_head_ao20.png",
+        "https://www.atptour.com/-/media/tennis/players/head-shot/2020/02/26/11/55/federer_head_ao20.png",
       matches: [
         {
           index: 0,
@@ -270,7 +270,7 @@ export default {
       singlesRank: 1,
       color: "#565ec1",
       image:
-        "https://www.atptour.com/-/media/tennis/players/head-shot/2019/djokovic_head_ao19.png",
+        "https://www.atptour.com/en/players/novak-djokovic/d643/www.atptour.com/-/media/tennis/players/head-shot/2019/02/25/18/18/djokovic_head_ao19.png",
       matches: [
         {
           index: 0,
@@ -532,7 +532,7 @@ export default {
       singlesRank: 2,
       color: "#e8702a",
       image:
-        "https://www.atptour.com/-/media/tennis/players/head-shot/2020/medvedev_head_ao20.png",
+        "https://www.atptour.com/-/media/tennis/players/head-shot/2022/05/18/21/17/medvedev-head-2022-may.png",
       matches: [
         {
           index: 0,
